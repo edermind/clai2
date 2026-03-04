@@ -1,0 +1,27 @@
+# GigaChat — вариант 1: api_key (Bearer-токен)
+provider: gigachat
+model: GigaChat
+api_key: <ваш_токен>
+
+# GigaChat — вариант 2: credentials (Base64 clientId:secret)
+# provider: gigachat
+# model: GigaChat
+# credentials: OGYxNzM4NTYtMzQ5Yi00ZWJiLWE4NTEtNmU5NTM4ZTdhNjhiOjE4YjUzODc...
+
+# --- Другие провайдеры ---
+
+# provider: claude
+# model: claude-sonnet-4-20250514
+# api_key: sk-ant-...
+
+# provider: openai
+# model: gpt-4o
+# api_key: sk-...
+
+# provider: gemini
+# model: gemini-2.0-flash
+# api_key: AIza...
+
+# provider: llama
+# model: llama3.2
+# host: http://localhost:11434  # опционально, это дефолт
