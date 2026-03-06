@@ -1,14 +1,39 @@
+# =============================================================================
+# clai2 — конфигурационный файл
+# Путь: ~/.clai2/config.yaml
+# =============================================================================
+#
+# ОБЯЗАТЕЛЬНЫЕ ПОЛЯ (для всех провайдеров):
+#   provider  — какой AI использовать: claude | openai | gemini | gigachat | llama
+#   model     — название модели (зависит от провайдера, см. примеры ниже)
+#
+# ПОЛЯ АВТОРИЗАЦИИ (зависят от провайдера):
+#   api_key     — Bearer-токен или API-ключ (claude, openai, gemini, gigachat)
+#   credentials — Base64(clientId:secret) только для gigachat, альтернатива api_key
+#
+# ОПЦИОНАЛЬНЫЕ ПОЛЯ:
+#   host  — только для llama, адрес Ollama сервера (по умолчанию http://localhost:11434)
+#
+# МОДЕЛИ ПО ПРОВАЙДЕРАМ:
+#   claude   → claude-opus-4-5, claude-sonnet-4-20250514, claude-haiku-4-5-20251001
+#   openai   → gpt-4o, gpt-4o-mini, gpt-4-turbo
+#   gemini   → gemini-2.0-flash, gemini-1.5-pro, gemini-1.5-flash
+#   gigachat → GigaChat, GigaChat-Plus, GigaChat-Pro, GigaChat-Max
+#   llama    → llama3.2, llama3.1, mistral, gemma3 (любая модель загруженная в Ollama)
+#
+# =============================================================================
+
 # GigaChat — вариант 1: api_key (Bearer-токен)
 provider: gigachat
 model: GigaChat
 api_key: <ваш_токен>
 
-# GigaChat — вариант 2: credentials (Base64 clientId:secret)
+# GigaChat — вариант 2: credentials (Base64 clientId:secret из личного кабинета Sber)
 # provider: gigachat
 # model: GigaChat
 # credentials: OGYxNzM4NTYtMzQ5Yi00ZWJiLWE4NTEtNmU5NTM4ZTdhNjhiOjE4YjUzODc...
 
-# --- Другие провайдеры ---
+# --- Другие провайдеры (раскомментируйте нужный) ---
 
 # provider: claude
 # model: claude-sonnet-4-20250514
@@ -24,4 +49,4 @@ api_key: <ваш_токен>
 
 # provider: llama
 # model: llama3.2
-# host: http://localhost:11434  # опционально, это дефолт
+# host: http://localhost:11434
