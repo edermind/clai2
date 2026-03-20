@@ -27,7 +27,13 @@ def build_provider(config: dict) -> BaseProvider:
             return LlamaProvider(model=model, host=host)
 
         case "gigachat":
-            return GigaChatProvider(credentials=config["credentials"], model=model)
+            return GigaChatProvider(
+                credentials=config.get("credentials"),
+                api_key=config.get("api_key"),
+                model=model
+            )
+        # case "gigachat":
+        #     return GigaChatProvider(credentials=config["credentials"], model=model)
 
         case _:
             raise ValueError(f"Неизвестный провайдер: {provider_name}")
