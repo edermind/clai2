@@ -4,7 +4,6 @@ from providers.base import BaseProvider
 
 
 class ClaudeProvider(BaseProvider):
-    """Провайдер Anthropic Claude."""
 
     def __init__(self, api_key: str, model: str):
         self.client = anthropic.Anthropic(api_key=api_key)

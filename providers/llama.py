@@ -4,7 +4,6 @@ from providers.base import BaseProvider
 
 
 class LlamaProvider(BaseProvider):
-    """Провайдер Ollama — локальный LLM без API-ключа."""
 
     def __init__(self, model: str, host: str = "http://localhost:11434"):
         self.model = model

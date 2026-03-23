@@ -16,8 +16,6 @@ REQUIRED_KEYS = {
 
 
 def load_config() -> dict:
-    """Загружает config.yaml. Завершает программу с понятной ошибкой если что-то не так."""
-
     if not CONFIG_PATH.exists():
         _exit(
             f"Конфиг не найден: {CONFIG_PATH}\n"

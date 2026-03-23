@@ -3,19 +3,10 @@ import sys
 from pathlib import Path
 
 
-# Паттерн: @filename — имя файла до пробела/конца строки
 _FILE_PATTERN = re.compile(r"@(\S+)")
 
 
 def inject_files(prompt: str) -> str:
-    """
-    Находит все вхождения @filename в промпте и заменяет их содержимым файла.
-
-    Пример:
-        "что случилось с nginx @/var/log/nginx/error.log"
-        →
-        "что случилось с nginx\n\n[/var/log/nginx/error.log]\n<содержимое файла>"
-    """
     matches = _FILE_PATTERN.findall(prompt)
 
     if not matches:

@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-"""
-clai2 — терминальный AI-агент для Linux.
-
-Использование:
-    clai2 "твой вопрос"
-    clai2 "что случилось с nginx @/var/log/nginx/error.log"
-    clai2 "объясни этот код @main.py"
-"""
 
 import argparse
 import sys
@@ -29,7 +20,6 @@ def main():
 
     args = parser.parse_args()
 
-    # Если промпт не передан — показать помощь
     if not args.prompt:
         parser.print_help()
         sys.exit(0)

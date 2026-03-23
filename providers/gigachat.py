@@ -5,11 +5,6 @@ from providers.base import BaseProvider
 
 
 class GigaChatProvider(BaseProvider):
-    """
-    Провайдер GigaChat. Поддерживает два способа авторизации:
-      - credentials: Base64(clientId:secret) — из личного кабинета Sber
-      - api_key:     Bearer-токен            — если получен напрямую
-    """
 
     def __init__(self, model: str, credentials: str = None, api_key: str = None):
         if not credentials and not api_key:

@@ -7,7 +7,6 @@ from providers.base import BaseProvider
 
 
 def build_provider(config: dict) -> BaseProvider:
-    """Создаёт нужный провайдер на основе конфига."""
 
     provider_name = config["provider"]
     model = config["model"]
@@ -40,6 +39,5 @@ def build_provider(config: dict) -> BaseProvider:
 
 
 def ask(prompt: str, config: dict) -> str:
-    """Главная функция агента: принять промпт → вернуть ответ."""
     provider = build_provider(config)
     return provider.chat(prompt)
